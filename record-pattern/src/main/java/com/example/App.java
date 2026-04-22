@@ -3,9 +3,9 @@ package com.example;
 
 public class App {
 	static void imprimeDetalles(Object obj) {
-		if (obj instanceof book book) {
-			System.out.println("Titulo del libro: "+ book.title());
-			System.out.println("Autor del libro" + book.author());
+		if (obj instanceof book (String titulo, String autor)) {
+			System.out.println("Titulo del libro: "+ titulo);
+			System.out.println("Autor del libro" + autor);
 		}
 	}
 	
@@ -21,5 +21,19 @@ public class App {
     			.build();
     	
     	imprimeDetalles(libro);
+    	
+    	
+    	Library library = Library.builder()
+    			.name("Biblioteca de mostoles")
+    			.bestSeller(book.builder()
+    					.title(" Java Programming")
+    					.author("Toma lacasitos")
+    					.build()
+    					)
+    			.build();
+    	
+    	if(library instanceof Library(String nombre, book (var titulo, var autor))) {
+    		System.out.println("En la biblioteca "+ nombre + ", el bestSeller es: "+ titulo +" por el autor "+ autor);
+    	}
     }
 }
